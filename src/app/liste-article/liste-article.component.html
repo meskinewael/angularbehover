@@ -1,0 +1,44 @@
+<mat-toolbar>List des Articles</mat-toolbar>
+<a mat-button color="primary" [routerLink]="['/addArticle']">Ajouter</a>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="titre">
+      <th mat-header-cell *matHeaderCellDef> titre </th>
+      <td mat-cell *matCellDef="let element"> {{element.titre}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="contenu">
+      <th mat-header-cell *matHeaderCellDef> contenu </th>
+      <td mat-cell *matCellDef="let element"> {{element.contenu}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="auteur">
+      <th mat-header-cell *matHeaderCellDef> auteur </th>
+      <td mat-cell *matCellDef="let element"> {{element.auteur}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+    </ng-container>
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> actions</th>
+   <td mat-cell *matCellDef="let row">
+    <button mat-button (click)="show(row)">Consulter</button>
+    <button mat-button (click)="edit(row)">Modifier</button>
+    <button mat-button>supprimer</button>
+   </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+ 
