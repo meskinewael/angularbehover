@@ -1,0 +1,34 @@
+<form [formGroup]="addArticle" class="example-form">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Ajouter un article</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+    <div class="example-container">
+      <label>titre</label>
+      <mat-form-field >
+        <input matInput type="text" formControlName="titre" >
+      </mat-form-field>
+      <label>contenu</label>
+      <mat-form-field>
+        <input matInput type="text" formControlName="contenu"  >
+      </mat-form-field>
+      <label>auteur</label>
+      <mat-form-field>
+        <input matInput type="text" formControlName="auteur"  >
+      </mat-form-field>
+      <label>date</label>
+      <mat-form-field>
+        <input matInput type="text" formControlName="date"  >
+      </mat-form-field>
+     
+    </div>
+    </mat-card-content>
+    <mat-card-footer>
+    <div class="example-button-row">
+    <button   mat-button color="primary"  (click)="articleManager()">Ajouter</button>
+    </div>
+    </mat-card-footer>
+    </mat-card>
+    </form>
+    
