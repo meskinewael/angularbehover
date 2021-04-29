@@ -1,0 +1,60 @@
+<h1 mat-dialog-title>Edit Post</h1>
+<div mat-dialog-content>
+  <form [formGroup]="formInstance">
+    <div>
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>title *</mat-label>
+        <input matInput type="text" name="title" formControlName="title">
+        <mat-error *ngIf="formInstance.controls['title']?.errors?.required">field required</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="mt-5" hidden>
+      <mat-form-field class="fullWidth" appearance="outline">
+       <input matInput type="text" name="application_id" formControlName="application_id" />
+      </mat-form-field>
+    </div>
+    <div class="mt-5" hidden>
+      <mat-form-field class="fullWidth" appearance="outline">
+       <input matInput type="text" name="blogpost_code" formControlName="blogpost_code" />
+      </mat-form-field>
+    </div>
+    <div class="mt-5" hidden>
+      <mat-form-field class="fullWidth" appearance="outline">
+       <input matInput type="text" name="company_email" formControlName="company_email" />
+      </mat-form-field>
+    </div>
+    <div class="mt-5">
+      <mat-form-field class="fullWidth" appearance="outline">
+        <mat-label>subtitle *</mat-label>
+        <input matInput type="text" name="subtitle" formControlName="subtitle" />
+        <mat-error *ngIf="formInstance.controls['subtitle']?.errors?.required">field required</mat-error>
+      </mat-form-field>
+    </div>
+      <div class="mt-5">
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>image *</mat-label>
+          <input matInput type="text" name="image" formControlName="image" />
+          <mat-error *ngIf="formInstance.controls['image']?.errors?.required">field required</mat-error>
+        </mat-form-field>
+      </div>
+      <div class="mt-5">
+        <mat-form-field class="fullWidth" appearance="outline">
+          <mat-label>content *</mat-label>
+          <input matInput type="text" name="content" formControlName="content" />
+          <mat-error *ngIf="formInstance.controls['content']?.errors?.required">field required</mat-error>
+        </mat-form-field>
+        </div>
+        <div class="mt-5">
+            <mat-form-field class="fullWidth" appearance="outline">
+              <mat-label>create_on *</mat-label>
+              <input matInput type="text" name="create_on" formControlName="create_on" />
+              <mat-error *ngIf="formInstance.controls['create_on']?.errors?.required">field required</mat-error>
+            </mat-form-field>
+      </div>
+  </form>
+</div>
+<div class="mt-5" mat-dialog-actions>
+  <button mat-raised-button color="primary" [disabled]="formInstance.dirty && formInstance.errors" (click)="save()"
+    cdkFocusInitial>Yes</button>
+  <button mat-raised-button mat-dialog-close>No</button>
+</div>

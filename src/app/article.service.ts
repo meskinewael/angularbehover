@@ -20,7 +20,7 @@ export class ArticleService {
     }
     data = this.articlesData.asObservable();
 
-    edit(Article: Articles) {
+   edit(Article: Articles) {
       let findElem = this.post.find(p => p.id == Article.id);
   
       findElem.titre = Article.titre;
