@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ArticleService } from '../article.service';
+
 @Component({
   selector: 'app-add-article',
   templateUrl: './add-article.component.html',
@@ -10,6 +11,7 @@ export class AddArticleComponent implements OnInit {
   addArticle : FormGroup;
   submitted = false;
   success = false;
+
   constructor(private formBuilder: FormBuilder , private ArticleService: ArticleService) { }
 
   ngOnInit(): void {
@@ -21,13 +23,9 @@ export class AddArticleComponent implements OnInit {
       
     });
   }
-
-
   articleManager(){ 
     const ArticleList = this.addArticle.value;
-    
   this.ArticleService.updatedDataSelection(ArticleList);
-    
   }
 
 }

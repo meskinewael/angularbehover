@@ -1,0 +1,62 @@
+<mat-card>
+<form [formGroup]="addPost" class="example-form" (ngSubmit)="onSubmit()">
+      <mat-card-header>
+        <mat-card-title><h1>Ajouter un article</h1></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+    <div class="example-container">
+      <label><strong>Titre</strong></label>
+      <mat-form-field >
+        <input matInput type="text"  class="form-control" formControlName="title" required>
+        <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+          <div *ngIf="f.title.errors.required">Le titre est obligatoire</div>
+      </div>
+      </mat-form-field>
+      <label><strong>Sous titre</strong> </label>
+      <mat-form-field>
+        <input matInput type="text" formControlName="subtitle"  >
+        <div *ngIf="submitted && f.subtitle.errors" class="invalid-feedback">
+          <div *ngIf="f.subtitle.errors.required"> le sous titre est obligatoire</div>
+        </div>
+      </mat-form-field>
+      <label><strong>Image</strong></label>
+      <mat-form-field>
+        <input matInput type="text" formControlName="image"  >
+        <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+          <div *ngIf="f.image.errors.required">l'image est obligatoire</div>
+        </div>
+      </mat-form-field>
+      <label><strong>	Image réduite</strong></label>
+      <mat-form-field>
+        <input matInput type="text" formControlName="small_image"  >
+        <div *ngIf="submitted && f.small_image.errors" class="invalid-feedback">
+          <div *ngIf="f.small_image.errors.required">l'image est obligatoire</div>
+        </div>
+      </mat-form-field>
+      <label><strong>Contenu</strong></label>
+      <mat-form-field>
+        <input matInput type="text" formControlName="content"  >
+        <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
+          <div *ngIf="f.content.errors.required">le contenu est oblogatoire</div>
+        </div>
+      </mat-form-field>
+      <mat-form-field>
+        <label><strong>Date</strong></label>
+        <input matInput [matDatepicker]="create_on" formControlName="create_on">
+        <mat-datepicker-toggle matSuffix [for]="create_on"></mat-datepicker-toggle>
+        <mat-datepicker #create_on></mat-datepicker>
+        <div *ngIf="submitted && f.create_on.errors" class="invalid-feedback">
+          <div *ngIf="f.create_on.errors" >la date est obligatoire</div>
+        </div>
+      </mat-form-field>
+    </div>
+    </mat-card-content>
+    <mat-card-footer>
+    <div class="example-button-row">
+    <button color="primary" type="submit" mat-raised-button>Ajouter</button>
+    <a routerLink="/listBlog"> <button  mat-raised-button>Retour</button></a> 
+    </div>
+    </mat-card-footer>
+    </form>
+  </mat-card>
+    
