@@ -13,6 +13,8 @@ import { BlogListComponent } from './blog-list/blog-list.component';
 import { AddPostComponent } from './add-post/add-post.component';
 import { BlogformComponent } from './blogform/blogform.component';
 import { RemoveFormComponent } from './remove-form/remove-form.component';
+import { DynamiqueDataTableComponent } from './dynamique-data-table/dynamique-data-table.component';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { RemoveFormComponent } from './remove-form/remove-form.component';
     AddPostComponent,
     BlogformComponent,
     RemoveFormComponent,
+    DynamiqueDataTableComponent,
+  
   ],
   imports: [
     BrowserModule,

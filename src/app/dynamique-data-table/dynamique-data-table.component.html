@@ -1,0 +1,22 @@
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+   
+    <ng-container *ngFor="let columns of Displaycolumns" [matColumnDef]="columns">
+      <th mat-header-cell *matHeaderCellDef> {{columns}} </th>
+      <td mat-cell *matCellDef="let element"> {{element[columns]}} </td>
+    </ng-container>
+  
+   
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef> Action</th>
+     <td mat-cell *matCellDef="let row">
+    <button mat-button >modifier</button>
+    <button mat-button >supprimer</button>
+     </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="Displaycolumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: Displaycolumns;"></tr>
+  </table>
+ 
