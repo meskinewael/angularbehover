@@ -2,10 +2,7 @@
 <mat-toolbar>List des blogs</mat-toolbar>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-  
-    <!-- Position Column -->
+   
     <ng-container matColumnDef="title">
       <th mat-header-cell *matHeaderCellDef> Titre </th>
       <td mat-cell *matCellDef="let element"> {{element.title}} </td>
@@ -42,8 +39,8 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action</th>
      <td mat-cell *matCellDef="let row">
-      <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="edit(row)" >home</mat-icon>
-      <button mat-button (click)="delete(row)">supprimer</button>
+    <button mat-button (click)="edit(row)" >modifier</button>
+    <button mat-button (click)="delete(row)">supprimer</button>
      </td>
       </ng-container>
 

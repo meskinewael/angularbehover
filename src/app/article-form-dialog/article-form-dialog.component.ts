@@ -22,7 +22,6 @@ export class ArticleFormDialogComponent implements OnInit {
     this.formInstance.setValue(data);
   }
 
-
   ngOnInit(): void {
   }
   save(): void {
