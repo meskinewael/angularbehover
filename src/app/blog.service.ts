@@ -30,4 +30,9 @@ export class BlogService {
   deleteBlogpost(id: string){
     return this.http.delete(`${this.url}?_id=${id}`);
   }
+
+  getuser():Observable<Blogpost>
+  {
+    return
+  }
 }
